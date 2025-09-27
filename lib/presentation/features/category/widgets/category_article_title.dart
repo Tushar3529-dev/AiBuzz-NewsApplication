@@ -108,6 +108,7 @@ class CategoryArticleTile extends StatelessWidget {
           description: article.description ?? "",
           content: article.content ?? "",
           source: article.source?.name ?? "",
+          url: article.url ?? "",
         ),
       ),
     );

@@ -10,13 +10,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
 class NewsDetailScreen extends StatefulWidget {
-  final String newImage,
-      newsTitle,
-      newsDate,
-      author,
-      description,
-      content,
-      source;
+  final String newImage;
+  final String newsTitle;
+  final String newsDate;
+  final String author;
+  final String description;
+  final String content;
+  final String source;
+  final String url; // ✅ keep url properly defined
 
   const NewsDetailScreen({
     super.key,
@@ -27,6 +28,7 @@ class NewsDetailScreen extends StatefulWidget {
     required this.description,
     required this.content,
     required this.source,
+    required this.url,
   });
 
   @override
@@ -101,6 +103,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
             urlToImage: widget.newImage,
             source: widget.source,
             publishedAt: widget.newsDate,
+            url: widget.url,
           );
           context.read<SavedArticlesBloc>().add(SaveArticle(article));
           ScaffoldMessenger.of(

@@ -11,10 +11,11 @@ class OpenDetailScreen {
           newImage: article.urlToImage ?? "",
           newsTitle: article.title ?? "",
           newsDate: article.publishedAt ?? "",
-          author: article.author ?? "",
+          author: article.author ?? "Unknown",
           description: article.description ?? "",
           content: article.content ?? "",
           source: article.source?.name ?? "",
+          url: article.url ?? "", // ✅ Added missing url
         ),
       ),
     );

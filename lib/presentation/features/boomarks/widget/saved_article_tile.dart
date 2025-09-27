@@ -35,13 +35,14 @@ class SavedArticleTile extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (_) => NewsDetailScreen(
-              newImage: article.urlToImage,
+              newImage: article.urlToImage ?? "",
               newsTitle: article.title,
               newsDate: article.publishedAt,
               author: article.author ?? "Unknown",
               description: article.description ?? "",
               content: article.content ?? "",
               source: article.source,
+              url: article.url ?? "",
             ),
           ),
         );

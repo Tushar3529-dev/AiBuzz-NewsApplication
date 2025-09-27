@@ -17,18 +17,21 @@ class ArticleHiveModelAdapter extends TypeAdapter<ArticleHiveModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return ArticleHiveModel(
-      title: fields[0] as String,
-      description: fields[1] as String,
-      urlToImage: fields[2] as String,
-      source: fields[3] as String,
-      publishedAt: fields[4] as String,
+      title: fields[0] as String?,
+      description: fields[1] as String?,
+      urlToImage: fields[2] as String?,
+      source: fields[3] as String?,
+      publishedAt: fields[4] as String?,
+      url: fields[5] as String?,
+      author: fields[6] as String?,
+      content: fields[7] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, ArticleHiveModel obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.title)
       ..writeByte(1)
@@ -38,7 +41,13 @@ class ArticleHiveModelAdapter extends TypeAdapter<ArticleHiveModel> {
       ..writeByte(3)
       ..write(obj.source)
       ..writeByte(4)
-      ..write(obj.publishedAt);
+      ..write(obj.publishedAt)
+      ..writeByte(5)
+      ..write(obj.url)
+      ..writeByte(6)
+      ..write(obj.author)
+      ..writeByte(7)
+      ..write(obj.content);
   }
 
   @override

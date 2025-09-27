@@ -35,7 +35,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
     final height = MediaQuery.sizeOf(context).height;
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(elevation: 0),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(

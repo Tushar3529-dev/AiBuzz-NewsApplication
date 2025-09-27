@@ -1,4 +1,5 @@
 import 'dart:async'; // ✅ Correct import for Timer
+import 'package:aibuzz_newsapp/presentation/utils/constants/image_string.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -50,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
-            'assets/images/splash_pic.jpg',
+            AiBuzzImage.splashImage,
             fit: BoxFit.cover,
             height: height * 0.5,
           ),

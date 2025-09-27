@@ -1,5 +1,5 @@
 import 'package:aibuzz_newsapp/presentation/features/home/screen/home_screen.dart';
-
+import 'package:aibuzz_newsapp/presentation/utils/constants/image_string.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -16,6 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _passwordController = TextEditingController();
 
   bool _isLoading = false;
+  bool _obscurePassword = true;
 
   Future<void> _saveLoginSession() async {
     final userBox = Hive.box('userBox');
@@ -33,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
       if (mounted) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (_) => const MainScreen()), // 👈 Fix
+          MaterialPageRoute(builder: (_) => const MainScreen()),
         );
       }
     }
@@ -62,6 +63,10 @@ class _LoginPageState extends State<LoginPage> {
             key: _formKey,
             child: Column(
               children: [
+                // Top Illustration (optional)
+                Image.asset(AiBuzzImage.loginImage),
+                const SizedBox(height: 20),
+
                 const Text(
                   "Login",
                   style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
@@ -73,6 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                   controller: _emailController,
                   decoration: const InputDecoration(
                     labelText: "Email",
+                    prefixIcon: Icon(Icons.email),
                     border: OutlineInputBorder(),
                   ),
                   validator: _validateEmail,
@@ -80,15 +86,28 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 20),
 
-                // Password Field
+                // Password Field with eye icon
                 TextFormField(
                   controller: _passwordController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: "Password",
-                    border: OutlineInputBorder(),
+                    prefixIcon: const Icon(Icons.lock),
+                    border: const OutlineInputBorder(),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _obscurePassword
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _obscurePassword = !_obscurePassword;
+                        });
+                      },
+                    ),
                   ),
                   validator: _validatePassword,
-                  obscureText: true,
+                  obscureText: _obscurePassword,
                 ),
                 const SizedBox(height: 30),
 
@@ -96,6 +115,8 @@ class _LoginPageState extends State<LoginPage> {
                 ElevatedButton(
                   onPressed: _isLoading ? null : _login,
                   style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue, // 🔹 Blue
+                    foregroundColor: Colors.white, // 🔹 White text
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     minimumSize: const Size.fromHeight(50),
                   ),

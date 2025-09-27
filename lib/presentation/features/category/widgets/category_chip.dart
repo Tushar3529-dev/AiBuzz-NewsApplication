@@ -19,9 +19,12 @@ class CategoryChip extends StatelessWidget {
         color: isSelected ? Colors.blue : Colors.blueGrey,
       ),
       padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: Text(
-        label,
-        style: GoogleFonts.poppins(fontSize: 13, color: Colors.white),
+      child: Center(
+        child: Text(
+          textAlign: TextAlign.center,
+          label,
+          style: GoogleFonts.poppins(fontSize: 13, color: Colors.white),
+        ),
       ),
     );
   }
