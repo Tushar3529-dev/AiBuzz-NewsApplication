@@ -1,3 +1,4 @@
+import 'package:aibuzz_newsapp/presentation/features/home/screen/home_screen.dart';
 import 'package:aibuzz_newsapp/presentation/features/login/screen/login_page.dart';
 import 'package:aibuzz_newsapp/presentation/features/news/screen/news_feed_page.dart';
 import 'package:aibuzz_newsapp/presentation/features/splash/screen/splash_screen.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter News App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: isLoggedIn ? const NewsFeedPage() : const SplashScreen(),
+      home: isLoggedIn ? const MainScreen() : const SplashScreen(),
     );
   }
 }
