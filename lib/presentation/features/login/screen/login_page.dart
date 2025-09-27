@@ -1,4 +1,5 @@
-import 'package:aibuzz_newsapp/presentation/features/news/screen/news_feed_page.dart';
+import 'package:aibuzz_newsapp/presentation/features/home/screen/home_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -16,7 +17,6 @@ class _LoginPageState extends State<LoginPage> {
 
   bool _isLoading = false;
 
-  /// Save login session using Hive
   Future<void> _saveLoginSession() async {
     final userBox = Hive.box('userBox');
     await userBox.put('isLoggedIn', true);
@@ -25,19 +25,15 @@ class _LoginPageState extends State<LoginPage> {
 
   Future<void> _login() async {
     if (_formKey.currentState!.validate()) {
-      setState(() {
-        _isLoading = true;
-      });
+      setState(() => _isLoading = true);
 
-      // Fake delay (simulate API call)
       await Future.delayed(const Duration(seconds: 1));
-
       await _saveLoginSession();
 
       if (mounted) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (_) => const NewsFeedPage()),
+          MaterialPageRoute(builder: (_) => const MainScreen()), // 👈 Fix
         );
       }
     }

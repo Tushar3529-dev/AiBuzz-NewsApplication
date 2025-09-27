@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:aibuzz_newsapp/data/model/categories_news_model.dart';
-import 'package:aibuzz_newsapp/data/model/news_channels_headlines_model.dart';
+import 'package:aibuzz_newsapp/data/remote/model/categories_news_model.dart';
+import 'package:aibuzz_newsapp/data/remote/model/news_channels_headlines_model.dart';
 import 'package:http/http.dart' as http;
 
 class NewsRepository {
