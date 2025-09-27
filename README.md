@@ -107,4 +107,68 @@ The app follows **Clean Architecture** principles with **separation of concerns*
 
 ## ⚙️ Setup Instructions
 
+```bash
+git clone https://github.com/Tushar3529-dev/AiBuzz-NewsApplication.git
+cd AiBuzz-NewsApplication
+
+Step 2: flutter pub get
+
+Step 3: Add API Key
+
+Get a free API key from NewsAPI.org
+.
+Replace the API key in news_repository.dart:
+
+Step 4: Run the app
+flutter run
+Step 5: Build release APK:
+flutter build apk --release
+
+Step 6: build/app/outputs/flutter-apk/app-release.apk
+
+
+```
+## 📂 Project Structure
+lib/
+│── data/
+│   ├── local/
+│   │   ├── data source/
+│   │   ├── model/
+│   │   └── repository/
+│   ├── remote/
+│   │   └── model/
+│   └── repository/
+│
+│── domain/
+│   ├── entities/
+│   └── repository/
+│
+│── presentation/
+│   ├── features/
+│   │   ├── auth/
+│   │   ├── news/
+│   │   ├── bookmarks/
+│   │   ├── category/
+│   │   ├── web/
+│   │   └── details/
+│   └── widgets/
+│
+│── main.dart
+
+
+
+
+## 👉 Download the APK from:
+Google Drive Link Here : https://drive.google.com/drive/folders/1rwPu9_2zmYERj_oYdyubc32FWB4FmWNx?usp=drive_link
+
+👨‍💻 Author
+Tushar Yadav
+GitHub: https://github.com/Tushar3529-dev
+
+
+
+
+
+
+
 
