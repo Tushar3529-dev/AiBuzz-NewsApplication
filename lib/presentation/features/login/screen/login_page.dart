@@ -115,8 +115,8 @@ class _LoginPageState extends State<LoginPage> {
                 ElevatedButton(
                   onPressed: _isLoading ? null : _login,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue, // 🔹 Blue
-                    foregroundColor: Colors.white, // 🔹 White text
+                    backgroundColor: Colors.blue, //  Blue
+                    foregroundColor: Colors.white, //  White text
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     minimumSize: const Size.fromHeight(50),
                   ),

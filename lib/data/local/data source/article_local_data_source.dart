@@ -2,7 +2,7 @@ import 'package:hive/hive.dart';
 import 'package:aibuzz_newsapp/data/local/model/article_hive_model.dart';
 
 class ArticleLocalDataSource {
-  // ✅ Strongly typed Hive box (must be opened in main.dart before use)
+  //  Strongly typed Hive box
   final Box<ArticleHiveModel> box = Hive.box<ArticleHiveModel>('articlesBox');
 
   Future<void> saveArticle(ArticleHiveModel article) async {

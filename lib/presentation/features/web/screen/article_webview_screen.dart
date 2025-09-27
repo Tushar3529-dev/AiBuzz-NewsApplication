@@ -32,7 +32,7 @@ class _ArticleWebViewScreenState extends State<ArticleWebViewScreen> {
           IconButton(
             icon: const Icon(Icons.bookmark),
             onPressed: () {
-              // ✅ Hook up to SavedArticlesBloc later
+              //  Hook up to SavedArticlesBloc later
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text("Article saved for later")),
               );

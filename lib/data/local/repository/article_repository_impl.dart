@@ -16,9 +16,9 @@ class ArticleRepositoryImpl implements ArticleRepository {
       urlToImage: article.urlToImage,
       source: article.source,
       publishedAt: article.publishedAt,
-      url: article.url ?? "", // ✅ add url
-      author: article.author, // ✅ optional if you added it in Hive
-      content: article.content, // ✅ optional if you added it in Hive
+      url: article.url ?? "",
+      author: article.author,
+      content: article.content,
     );
     await localDataSource.saveArticle(model);
   }
@@ -34,9 +34,9 @@ class ArticleRepositoryImpl implements ArticleRepository {
             urlToImage: m.urlToImage ?? "",
             source: m.source ?? "Unknown",
             publishedAt: m.publishedAt ?? DateTime.now().toIso8601String(),
-            url: m.url ?? "", // ✅ required field
-            author: m.author, // optional
-            content: m.content, // optional
+            url: m.url ?? "",
+            author: m.author,
+            content: m.content,
           ),
         )
         .toList();

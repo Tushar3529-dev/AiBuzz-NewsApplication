@@ -1,7 +1,7 @@
 class ArticleEntity {
   final String title;
   final String? description;
-  final String? urlToImage; // <-- make this nullable
+  final String? urlToImage;
   final String source;
   final String publishedAt;
   final String? content;

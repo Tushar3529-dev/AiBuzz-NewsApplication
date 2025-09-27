@@ -2,7 +2,6 @@ import 'package:aibuzz_newsapp/presentation/features/details/screen/news_detail_
 import 'package:flutter/material.dart';
 
 class OpenDetailScreen {
-  /// Make it a static method so you can call: OpenDetailScreen.open(context, article)
   static void open(BuildContext context, dynamic article) {
     Navigator.push(
       context,
@@ -15,7 +14,7 @@ class OpenDetailScreen {
           description: article.description ?? "",
           content: article.content ?? "",
           source: article.source?.name ?? "",
-          url: article.url ?? "", // ✅ Added missing url
+          url: article.url ?? "",
         ),
       ),
     );

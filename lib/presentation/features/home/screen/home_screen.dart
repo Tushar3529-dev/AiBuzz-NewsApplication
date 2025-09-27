@@ -27,7 +27,7 @@ class _MainScreenState extends State<MainScreen> {
       body: _screens[_currentIndex],
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
-          canvasColor: Colors.blue, // 🔹 Forces full blue background
+          canvasColor: Colors.blue, //  Forces full blue background
         ),
         child: BottomNavigationBar(
           selectedItemColor: Colors.white,

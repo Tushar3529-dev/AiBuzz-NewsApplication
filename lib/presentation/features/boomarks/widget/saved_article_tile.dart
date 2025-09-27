@@ -30,7 +30,7 @@ class SavedArticleTile extends StatelessWidget {
 
     return InkWell(
       onTap: () {
-        // ✅ Navigate to NewsDetailScreen using saved data
+        //  Navigate to NewsDetailScreen using saved data
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -67,7 +67,7 @@ class SavedArticleTile extends StatelessWidget {
             ),
             const SizedBox(width: 12),
 
-            // 🔹 Title + Source + Date
+            //  Title + Source + Date
             Expanded(
               child: SizedBox(
                 height: height * .18,
@@ -110,7 +110,7 @@ class SavedArticleTile extends StatelessWidget {
               ),
             ),
 
-            // 🔹 Delete Button
+            //  Delete Button
             IconButton(
               icon: const Icon(Icons.delete, color: Colors.red),
               onPressed: () {
