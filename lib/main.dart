@@ -1,5 +1,6 @@
 import 'package:aibuzz_newsapp/data/local/model/article_hive_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -12,6 +13,8 @@ import 'package:aibuzz_newsapp/presentation/features/splash/screen/splash_screen
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
 
   // ✅ Initialize Hive
   await Hive.initFlutter();
